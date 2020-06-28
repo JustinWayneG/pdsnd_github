@@ -5,7 +5,7 @@ June 27, 2020
 Post your work on GitHub
 
 ### Description
-Describe what your project is about and what it does
+This project is to simulate a realistic workflow to refactor my BikeShare project using Git.
 
 ### Files used
 Include the files used

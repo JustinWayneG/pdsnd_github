@@ -88,7 +88,6 @@ def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
-    start_time = time.time()
 
     # TO DO: display the most common month
     df['month'] = df['Start Time'].dt.month
@@ -105,7 +104,6 @@ def time_stats(df):
     most_common_hour = df['hour'].mode()[0]
     print("The most common start hour is:", most_common_hour)
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
@@ -113,7 +111,6 @@ def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
-    start_time = time.time()
 
     # TO DO: display most commonly used start station
     most_common_start = df['Start Station'].mode()[0]
@@ -128,7 +125,6 @@ def station_stats(df):
     most_common_combination = df['Combined Start to End Station'].mode()[0]
     print("The most frequent combination of start station and end station trip is:", most_common_combination)
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
@@ -136,7 +132,6 @@ def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
 
     print('\nCalculating Trip Duration...\n')
-    start_time = time.time()
 
     # TO DO: display total travel time
     total_travel_time = df['Trip Duration'].sum()
@@ -146,7 +141,6 @@ def trip_duration_stats(df):
     mean_travel = df['Trip Duration'].mean()
     print("The mean travel time is", mean_travel)
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
@@ -154,31 +148,22 @@ def user_stats(df):
     """Displays statistics on bikeshare users."""
 
     print('\nCalculating User Stats...\n')
-    start_time = time.time()
 
     # TO DO: Display counts of user types
     count_user_types = df['User Type'].value_counts()
     print("The following is a count of user types:\n", count_user_types)
 
-    # TO DO: Display counts of gender
-    if 'Gender' in df:
-        count_gender = df['Gender'].value_counts()
-        print("The following is a count of the users gender:\n", count_gender)
-    else:
-        print("There is no gender information in this city.")
-
     # TO DO: Display earliest, most recent, and most common year of birth
     if 'Birth Year' in df:
         earliest_birth = df['Birth Year'].min()
-        print("The earliest year of birth is:", earliest_birth)
+        print("The oldest user was born in:", earliest_birth)
         most_recent_birth = df['Birth Year'].max()
-        print("The most recent year of birth is:", most_recent_birth)
+        print("The youngest user was born in:", most_recent_birth)
         most_common_birth = df['Birth Year'].mode()[0]
         print("The most common year of birth is:", most_common_birth)
     else:
         print("There is no birth year information for this city.")
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 def raw_data(df):

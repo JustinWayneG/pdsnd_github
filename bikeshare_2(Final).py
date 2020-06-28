@@ -153,13 +153,6 @@ def user_stats(df):
     count_user_types = df['User Type'].value_counts()
     print("The following is a count of user types:\n", count_user_types)
 
-    # TO DO: Display counts of gender
-    if 'Gender' in df:
-        count_gender = df['Gender'].value_counts()
-        print("The following is a count of the users gender:\n", count_gender)
-    else:
-        print("There is no gender information in this city.")
-
     # TO DO: Display earliest, most recent, and most common year of birth
     if 'Birth Year' in df:
         earliest_birth = df['Birth Year'].min()

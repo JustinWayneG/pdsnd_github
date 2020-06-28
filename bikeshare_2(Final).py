@@ -189,11 +189,11 @@ def raw_data(df):
     """
     raw_data = np.array([0, 1, 2, 3, 4])
     while True:
-        answer = input("Would you want to see raw data? Yes or No?").lower()
+        answer = input("Would you want to see the first 5 rows of raw data? Yes or No?").lower()
         if answer == 'yes':
             print(df.iloc[raw_data])
             while True:
-                next_answer = input("Would you like to see more rows? Yes or No?").lower()
+                next_answer = input("Would you like to see 5 more rows of raw data? Yes or No?").lower()
                 raw_data += 5
                 if next_answer == 'yes':
                     print(df.iloc[raw_data])

@@ -182,7 +182,11 @@ def user_stats(df):
     print('-'*40)
 
 def raw_data(df):
-    """Displays raw data upon request by the user."""
+    """Asks user if they would like to see raw data.
+
+    Returns:
+        5 rows of raw data and asks the user if they would like to see the next 5 rows of data.
+    """
     raw_data = np.array([0, 1, 2, 3, 4])
     while True:
         answer = input("Would you want to see raw data? Yes or No?").lower()
